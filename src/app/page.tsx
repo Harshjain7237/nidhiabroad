@@ -4,36 +4,36 @@ import Footer from "@/components/Footer";
 
 const stats = [
   { value: "10K+", label: "Followers in 2 months" },
+  { value: "🇩🇪", label: "HR Tech PM, Germany" },
   { value: "3", label: "Content series running" },
-  { value: "100%", label: "Non-technical, real stories" },
 ];
 
 const offerings = [
   {
     icon: "📖",
     tag: "Digital Guides",
-    title: "Step-by-step roadmaps",
-    desc: "From visa applications to job offers — every guide is built from real experience, not Google searches.",
+    title: "Resources that actually help",
+    desc: "Career frameworks, job search tools, and HR tech breakdowns — built from real experience inside the industry.",
     href: "/guides",
     cta: "Browse Guides",
     accent: "var(--purple)",
   },
   {
     icon: "🎯",
-    tag: "1:1 Consult",
-    title: "Talk to someone who's been there",
-    desc: "Book a session with Nidhi. Get specific, honest answers for your exact situation — not generic advice.",
+    tag: "1:1 Coaching",
+    title: "Talk to someone already there",
+    desc: "Book a focused session with Nidhi. Career strategy, confidence, HR tech — specific answers for your situation.",
     href: "/consult",
     cta: "Book a Session",
     accent: "var(--gold)",
   },
   {
-    icon: "🌍",
-    tag: "Community",
-    title: "Don't navigate this alone",
-    desc: "Join people at the same stage of their abroad journey. Resources, Q&As, and real peer support.",
+    icon: "📬",
+    tag: "Inner Circle",
+    title: "The newsletter worth reading",
+    desc: "Corporate confidence, HR tech, AI trends, and what it really takes to build a global career. Bi-weekly, no fluff.",
     href: "/community",
-    cta: "Join the Community",
+    cta: "Subscribe Free",
     accent: "var(--teal)",
   },
 ];
@@ -71,7 +71,7 @@ export default function Home() {
               fontFamily: "var(--font-mono)",
             }}
           >
-            ✦ Building careers that belong anywhere
+            ✦ HR Tech · Corporate Confidence · Global Careers
           </span>
 
           <h1
@@ -84,23 +84,23 @@ export default function Home() {
               marginBottom: 24,
             }}
           >
-            <span className="gradient-brand">You don&apos;t need</span>
+            <span className="gradient-brand">Build a career</span>
             <br />
-            to be technical
+            that belongs
             <br />
-            to work in tech.
+            anywhere.
           </h1>
 
           <p
             style={{
               color: "var(--grey1)",
               fontSize: "clamp(15px, 2vw, 18px)",
-              maxWidth: 520,
+              maxWidth: 540,
               marginBottom: 40,
               lineHeight: 1.7,
             }}
           >
-            Nidhi helps non-technical professionals break into tech, land international roles, and build careers that travel with them — wherever they go.
+            Nidhi Duhan is an HR Tech PM in Germany writing about corporate confidence, HR tech, AI trends, and what it really takes to build a career without borders.
           </p>
 
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
