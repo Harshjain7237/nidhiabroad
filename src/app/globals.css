@@ -2,26 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════
+   BRAND TOKENS — nidhiabroad.com
+═══════════════════════════════════════ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:        #0A0A0F;
+  --bg2:       #121218;
+  --bg3:       #1A1A24;
+  --bg4:       #22222E;
+  --purple:    #9B6DFF;
+  --purple-lo: #6B3FD4;
+  --purple-hi: #C4A4FF;
+  --gold:      #F5C842;
+  --gold-lo:   #B8920A;
+  --teal:      #4ECDC4;
+  --rose:      #FF6B9D;
+  --white:     #F0EFF8;
+  --grey1:     #8B8AA0;
+  --grey2:     #3A3A4E;
+  --grey3:     #2A2A38;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --radius:    12px;
+  --radius-lg: 20px;
+  --transition: 0.35s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* Purple glow ambient */
+body::after {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(155, 109, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-balance { text-wrap: balance; }
+
+  .gradient-brand {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(18, 18, 24, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(155, 109, 255, 0.12);
+  }
+
+  .glass-card {
+    background: rgba(26, 26, 36, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(155, 109, 255, 0.1);
+    border-radius: var(--radius-lg);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--purple-lo) 100%);
+    color: var(--white);
+    border-radius: var(--radius);
+    font-family: var(--font-head);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: var(--transition);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(155, 109, 255, 0.4);
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-lo) 100%);
+    color: #0A0A0F;
+    border-radius: var(--radius);
+    font-family: var(--font-head);
+    font-weight: 700;
+    transition: var(--transition);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(245, 200, 66, 0.35);
   }
 }

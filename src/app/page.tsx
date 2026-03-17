@@ -1,101 +1,265 @@
-import Image from "next/image";
+import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+
+const stats = [
+  { value: "10K+", label: "Followers in 2 months" },
+  { value: "3", label: "Countries covered" },
+  { value: "100%", label: "Actually done it" },
+];
+
+const offerings = [
+  {
+    icon: "📖",
+    tag: "Digital Guides",
+    title: "Step-by-step roadmaps",
+    desc: "From visa applications to job offers — every guide is built from real experience, not Google searches.",
+    href: "/guides",
+    cta: "Browse Guides",
+    accent: "var(--purple)",
+  },
+  {
+    icon: "🎯",
+    tag: "1:1 Consult",
+    title: "Talk to someone who's been there",
+    desc: "Book a session with Nidhi. Get specific, honest answers for your exact situation — not generic advice.",
+    href: "/consult",
+    cta: "Book a Session",
+    accent: "var(--gold)",
+  },
+  {
+    icon: "🌍",
+    tag: "Community",
+    title: "Don't navigate this alone",
+    desc: "Join people at the same stage of their abroad journey. Resources, Q&As, and real peer support.",
+    href: "/community",
+    cta: "Join the Community",
+    accent: "var(--teal)",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Nav />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <main style={{ position: "relative", zIndex: 1 }}>
+
+        {/* ── HERO ── */}
+        <section
+          style={{
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+            padding: "120px 24px 80px",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-block",
+              background: "rgba(155, 109, 255, 0.12)",
+              border: "1px solid rgba(155, 109, 255, 0.3)",
+              borderRadius: 100,
+              padding: "6px 18px",
+              fontSize: 12,
+              color: "var(--purple-hi)",
+              letterSpacing: "0.08em",
+              marginBottom: 28,
+              fontFamily: "var(--font-mono)",
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            ✦ India → Europe — the real guide
+          </span>
+
+          <h1
+            style={{
+              fontFamily: "var(--font-head)",
+              fontWeight: 800,
+              fontSize: "clamp(2.4rem, 7vw, 5rem)",
+              lineHeight: 1.1,
+              maxWidth: 800,
+              marginBottom: 24,
+            }}
           >
-            Read our docs
-          </a>
-        </div>
+            <span className="gradient-brand">Everything you wish</span>
+            <br />
+            someone had told you
+            <br />
+            before moving abroad.
+          </h1>
+
+          <p
+            style={{
+              color: "var(--grey1)",
+              fontSize: "clamp(15px, 2vw, 18px)",
+              maxWidth: 520,
+              marginBottom: 40,
+              lineHeight: 1.7,
+            }}
+          >
+            Guides, consultations, and a community — built by an Indian who actually moved to Europe and figured it all out the hard way.
+          </p>
+
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+            <Link href="/guides" className="btn-primary px-8 py-3 text-sm no-underline">
+              Explore Guides →
+            </Link>
+            <Link
+              href="/consult"
+              style={{
+                padding: "12px 32px",
+                borderRadius: "var(--radius)",
+                border: "1px solid rgba(155, 109, 255, 0.3)",
+                color: "var(--white)",
+                fontSize: 14,
+                transition: "var(--transition)",
+              }}
+              className="hover:border-[#9B6DFF] hover:bg-[#1A1A24] no-underline"
+            >
+              Book a Consult
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div
+            style={{
+              display: "flex",
+              gap: 48,
+              marginTop: 72,
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            {stats.map((s) => (
+              <div key={s.label} style={{ textAlign: "center" }}>
+                <div
+                  className="gradient-brand"
+                  style={{ fontFamily: "var(--font-head)", fontWeight: 800, fontSize: 32 }}
+                >
+                  {s.value}
+                </div>
+                <div style={{ color: "var(--grey1)", fontSize: 13, marginTop: 4 }}>{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── OFFERINGS ── */}
+        <section style={{ padding: "80px 24px", maxWidth: 1100, margin: "0 auto" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-head)",
+              fontWeight: 800,
+              fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
+              textAlign: "center",
+              marginBottom: 16,
+            }}
+          >
+            How I can help you
+          </h2>
+          <p style={{ color: "var(--grey1)", textAlign: "center", marginBottom: 56, fontSize: 15 }}>
+            Pick what matches where you are in your journey right now.
+          </p>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 24,
+            }}
+          >
+            {offerings.map((o) => (
+              <div
+                key={o.tag}
+                className="glass-card"
+                style={{ padding: "36px 32px", transition: "var(--transition)" }}
+              >
+                <div style={{ fontSize: 36, marginBottom: 16 }}>{o.icon}</div>
+                <span
+                  style={{
+                    fontSize: 11,
+                    fontFamily: "var(--font-mono)",
+                    color: o.accent,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {o.tag}
+                </span>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-head)",
+                    fontWeight: 700,
+                    fontSize: 20,
+                    margin: "12px 0 10px",
+                    color: "var(--white)",
+                  }}
+                >
+                  {o.title}
+                </h3>
+                <p style={{ color: "var(--grey1)", fontSize: 14, lineHeight: 1.7, marginBottom: 28 }}>
+                  {o.desc}
+                </p>
+                <Link
+                  href={o.href}
+                  style={{
+                    display: "inline-block",
+                    padding: "10px 24px",
+                    borderRadius: "var(--radius)",
+                    border: `1px solid ${o.accent}40`,
+                    color: o.accent,
+                    fontSize: 13,
+                    fontFamily: "var(--font-head)",
+                    fontWeight: 600,
+                    transition: "var(--transition)",
+                  }}
+                  className="no-underline hover:bg-[#1A1A24]"
+                >
+                  {o.cta} →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── NEWSLETTER CTA ── */}
+        <section style={{ padding: "80px 24px" }}>
+          <div
+            className="glass-card"
+            style={{
+              maxWidth: 680,
+              margin: "0 auto",
+              padding: "56px 40px",
+              textAlign: "center",
+              background: "linear-gradient(135deg, rgba(155,109,255,0.08) 0%, rgba(245,200,66,0.06) 100%)",
+            }}
+          >
+            <span style={{ fontSize: 40 }}>✉️</span>
+            <h2
+              style={{
+                fontFamily: "var(--font-head)",
+                fontWeight: 800,
+                fontSize: "clamp(1.4rem, 3vw, 2rem)",
+                margin: "16px 0 12px",
+              }}
+            >
+              The abroad newsletter
+            </h2>
+            <p style={{ color: "var(--grey1)", fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
+              Real experiences, visa updates, job search tips — straight to your inbox. No fluff.
+            </p>
+            <Link href="/newsletter" className="btn-gold px-8 py-3 text-sm no-underline">
+              Subscribe Free →
+            </Link>
+          </div>
+        </section>
+
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+      <Footer />
+    </>
   );
 }
