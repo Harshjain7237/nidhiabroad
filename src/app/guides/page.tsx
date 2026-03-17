@@ -6,7 +6,8 @@ import { series as staticSeries } from "./data";
 import { fetchEpisodes } from "@/lib/sheets";
 import type { Series } from "./data";
 
-export const revalidate = 300; // fallback: revalidate every 5 min
+export const revalidate = 300; // revalidate every 5 min
+export const fetchCache = "force-no-store"; // don't let fetch hang at build time
 
 export const metadata = {
   title: "Guides & Series — nidhiabroad",

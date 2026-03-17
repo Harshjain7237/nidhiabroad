@@ -53,9 +53,16 @@ export async function fetchEpisodes(): Promise<SheetEpisode[]> {
   }
 
   try {
+    // Hard 5s timeout — prevents hanging Vercel's static generation workers
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
     const res = await fetch(csvUrl, {
-      next: { revalidate: 300 }, // revalidate every 5 minutes as fallback
+      signal: controller.signal,
+      next: { revalidate: 300 },
     });
+
+    clearTimeout(timeoutId);
 
     if (!res.ok) throw new Error(`Sheet fetch failed: ${res.status}`);
 
@@ -78,6 +85,6 @@ export async function fetchEpisodes(): Promise<SheetEpisode[]> {
       .sort((a, b) => a.episode_number - b.episode_number);
   } catch (err) {
     console.error("Failed to fetch episodes from Google Sheets:", err);
-    return [];
+    return []; // always fall back to static data — never crash the build
   }
 }
