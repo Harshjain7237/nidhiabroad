@@ -21,9 +21,9 @@
   --grey1:     #8B8AA0;
   --grey2:     #3A3A4E;
   --grey3:     #2A2A38;
-  --font-head: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'DM Mono', monospace;
+  --font-head: var(--font-head, 'Playfair Display', serif);
+  --font-body: var(--font-body, 'DM Sans', sans-serif);
+  --font-mono: var(--font-mono, 'DM Mono', monospace);
   --radius:    12px;
   --radius-lg: 20px;
   --transition: 0.35s cubic-bezier(0.23, 1, 0.32, 1);

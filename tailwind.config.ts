@@ -32,9 +32,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        head: ["Syne", "sans-serif"],
-        body: ["DM Sans", "sans-serif"],
-        mono: ["DM Mono", "monospace"],
+        head: ["var(--font-head)", "Playfair Display", "serif"],
+        body: ["var(--font-body)", "DM Sans", "sans-serif"],
+        mono: ["var(--font-mono)", "DM Mono", "monospace"],
       },
       borderRadius: {
         brand: "12px",

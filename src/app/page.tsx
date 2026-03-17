@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 
 const stats = [
   { value: "10K+", label: "Followers in 2 months" },
-  { value: "3", label: "Countries covered" },
-  { value: "100%", label: "Actually done it" },
+  { value: "3", label: "Content series running" },
+  { value: "100%", label: "Non-technical, real stories" },
 ];
 
 const offerings = [
@@ -71,7 +71,7 @@ export default function Home() {
               fontFamily: "var(--font-mono)",
             }}
           >
-            ✦ India → Europe — the real guide
+            ✦ Building careers that belong anywhere
           </span>
 
           <h1
@@ -84,11 +84,11 @@ export default function Home() {
               marginBottom: 24,
             }}
           >
-            <span className="gradient-brand">Everything you wish</span>
+            <span className="gradient-brand">You don&apos;t need</span>
             <br />
-            someone had told you
+            to be technical
             <br />
-            before moving abroad.
+            to work in tech.
           </h1>
 
           <p
@@ -100,7 +100,7 @@ export default function Home() {
               lineHeight: 1.7,
             }}
           >
-            Guides, consultations, and a community — built by an Indian who actually moved to Europe and figured it all out the hard way.
+            Nidhi helps non-technical professionals break into tech, land international roles, and build careers that travel with them — wherever they go.
           </p>
 
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
@@ -246,10 +246,10 @@ export default function Home() {
                 margin: "16px 0 12px",
               }}
             >
-              The abroad newsletter
+              Inner Circle — bi-weekly
             </h2>
             <p style={{ color: "var(--grey1)", fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-              Real experiences, visa updates, job search tips — straight to your inbox. No fluff.
+              Deeper career insights, behind-the-scenes, and resources not shared publicly on social. No fluff, ever.
             </p>
             <Link href="/newsletter" className="btn-gold px-8 py-3 text-sm no-underline">
               Subscribe Free →

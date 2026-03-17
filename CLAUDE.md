@@ -1,187 +1,204 @@
-# CLAUDE.md — @nidhiabroad Product
-
-> This is the living product bible. Update it as decisions are made.
-
----
-
-## 1. The Business
-
-**Brand:** @nidhiabroad
-**Founders:** Nidhi (face of brand) + Partner (behind the scenes)
-**Story:** Indian → Europe (Germany / Netherlands) journey — sharing the full abroad experience: work, study, immigration, and life
-**Traction:** 10,000 followers in 2 months on Instagram
-**Newsletter:** Already running on Substack
-**Mission:** Be the most honest, actionable, and beautifully designed resource for Indians (and South Asians) navigating life abroad
+# CLAUDE.md — nidhiabroad / @nidhiduhan
+> Living product bible. Update every session.
 
 ---
 
-## 2. The Product — MVP
+## 1. The Brand
 
-We are building **nidhiabroad.com** — a creator commerce hub that monetises the brand across 3 revenue streams at launch:
+**Creator:** Nidhi Duhan
+**Handles:** @nidhiabroad (Instagram, YouTube, Substack) · @nidhiduhan (LinkedIn)
+**Tagline:** "Building careers that belong anywhere."
+**Mission:** Help non-technical professionals break into tech, land international opportunities, and build career confidence.
+**Audience:** India, US, Europe — people wanting global, portable careers. Primarily non-engineers.
 
-### Revenue Streams (MVP)
-| # | Product | Model | Tool |
-|---|---------|-------|------|
-| 1 | **Digital Guides / Roadmaps** | One-time purchase | Lemon Squeezy |
-| 2 | **1:1 Consultations** | Paid booking | Cal.com |
-| 3 | **Community / Membership** | Recurring subscription | Lemon Squeezy or Whop |
-| 4 | **Newsletter** | Free (lead gen) | Substack (already exists) |
-
-### Future Roadmap (NOT MVP)
-- AI-powered tools (visa tracker, resume builder, etc.)
-- Course / cohort-based offering
+### Platforms
+| Platform | URL |
+|----------|-----|
+| Instagram | https://instagram.com/nidhiabroad |
+| Substack | https://substack.com/@nidhiabroad |
+| YouTube | https://youtube.com/@nidhiabroad |
+| LinkedIn | https://linkedin.com/in/nidhiduhan |
 
 ---
 
-## 3. Design System
+## 2. Content Series
 
-Inherited from the Technical Recruiter Roadmap HTML (`nidhiabroad/technical_recruiter.html`).
-Live reference: https://nidhiabroad-tech-recruiter.netlify.app/
+### 🎙️ Non-Technical Tech Jobs (Instagram + Web)
+Flagship series. Each episode = one non-engineering role in tech. Standalone HTML roadmap pages.
+- Episode 1: Technical Recruiter (LIVE at https://nidhiabroad-tech-recruiter.netlify.app/)
 
-### Tokens
-```
---bg:        #0A0A0F   (base dark)
---bg2:       #121218
---bg3:       #1A1A24
---bg4:       #22222E
---purple:    #9B6DFF   (primary accent)
---purple-lo: #6B3FD4
---purple-hi: #C4A4FF
---gold:      #F5C842   (secondary accent)
---teal:      #4ECDC4
---rose:      #FF6B9D
---white:     #F0EFF8
---grey1:     #8B8AA0
---grey2:     #3A3A4E
-```
+### 📚 Careers Decoded (Instagram)
+Explainer content: career paths, industries, job market trends.
+
+### 💪 Career Confidence (Instagram)
+Mindset, personal branding, soft-skill content.
+
+### 📬 Inner Circle (Substack — bi-weekly)
+Deeper dives, behind-the-scenes, career resources not shared publicly.
+
+---
+
+## 3. Monetization — Current & Planned
+
+| Stream | Status | Platform |
+|--------|--------|----------|
+| 1:1 Coaching Calls | Active / in dev | Cal.com |
+| Resume Reviews | Active / in dev | Cal.com |
+| Digital Products | First product built | Gumroad |
+| Cohort Course | Planned — waitlist live | Website |
+| Brand Collaborations | Planned | — |
+
+### Booking Links (Cal.com)
+- 15-min: https://cal.com/nidhiabroad/15min
+- 30-min: https://cal.com/nidhiabroad/30min
+
+---
+
+## 4. Digital Products
+
+### Product 1: "The Architect" (LIVE on Gumroad)
+- Type: Notion habit tracker template
+- Price: ~$9–$19
+- Features: XP system, leveling, streaks, badges — gamified productivity
+- Aesthetic: premium dark (purple + gold on near-black)
+
+### Planned Products
+- LinkedIn post templates
+- Job application tracker
+- Financial planner
+- Career growth tools
+- Cohort course (waitlist capturing)
+
+---
+
+## 5. Design System
+
+| Token | Value |
+|-------|-------|
+| Background | `#0A0A0F` |
+| Background 2 | `#121218` |
+| Background 3 | `#1A1A24` |
+| Background 4 | `#22222E` |
+| Primary Purple | `#9B6DFF` |
+| Purple Low | `#6B3FD4` |
+| Purple High | `#C4A4FF` |
+| Gold | `#F5C842` |
+| Gold Low | `#B8920A` |
+| Teal | `#4ECDC4` |
+| Rose | `#FF6B9D` |
+| White | `#F0EFF8` |
+| Grey 1 | `#8B8AA0` |
+| Grey 2 | `#3A3A4E` |
 
 ### Typography
-- **Headings:** Syne (800 weight)
+- **Headings:** Playfair Display (editorial, premium feel)
 - **Body:** DM Sans
-- **Mono/Code:** DM Mono
+- **Mono:** DM Mono
 
-### Style Rules
+### Aesthetic Rules
 - Dark base always (`#0A0A0F`)
 - Purple → Gold gradients for brand moments
-- Glassmorphism nav and cards (`backdrop-filter: blur`)
+- Glassmorphism nav + cards (`backdrop-filter: blur`)
 - Noise texture overlay at 40% opacity
-- 12px base border-radius, 20px large
-- Smooth cubic-bezier transitions (`0.35s cubic-bezier(0.23, 1, 0.32, 1)`)
+- 12px base radius, 20px large radius
+- `0.35s cubic-bezier(0.23, 1, 0.32, 1)` transitions
+- **Mobile-first** — 90%+ traffic from Instagram
+
+### Known Mobile Failure Points (avoid these)
+- Fixed `minmax()` grid values — use `auto-fit` with fluid mins
+- Missing `overflow-x: auto` on tab/scroll components
+- Absent small-screen breakpoints on paddings
 
 ---
 
-## 4. Tech Stack
+## 6. Tech Stack
 
-Principle: **Minimal cost, maximum scalability, zero over-engineering.**
+| Layer | Choice | Cost |
+|-------|--------|------|
+| Frontend + Hosting | Next.js 14 + Vercel | Free |
+| Database + Auth | Supabase | Free |
+| Payments / Digital Products | Gumroad (existing) → Lemon Squeezy (future) | 0 fixed |
+| Bookings | Cal.com | Free |
+| Email | Resend | Free (3k/mo) |
+| Analytics | Vercel Analytics | Free |
 
-| Layer | Choice | Why |
-|-------|--------|-----|
-| **Frontend** | Next.js 14 (App Router) | React, file-based routing, built-in API routes, free on Vercel |
-| **Styling** | Tailwind CSS + custom CSS vars | Speed + the exact design system above |
-| **Hosting** | Vercel | Free tier, instant deploys from GitHub |
-| **Database** | Supabase (Postgres) | Free tier, auth included, real-time, row-level security |
-| **Auth** | Supabase Auth | Email magic link + Google OAuth |
-| **Payments** | Lemon Squeezy | No setup fee, handles EU VAT automatically (critical for Europe-based creator), digital products + subscriptions |
-| **Booking** | Cal.com | Free self-hosted or $0 cloud plan, embeddable |
-| **Email** | Resend | Free 3k/month, works with Supabase |
-| **CMS** | Notion API or MDX files | Blog posts, guide descriptions, no extra cost |
-| **Analytics** | Plausible or Vercel Analytics | Privacy-first, GDPR compliant (Europe matters here) |
-
-### Why NOT (decisions made)
-- ❌ Shopify — overkill, costs money, bad UX for digital products
-- ❌ Webflow — can't own the code
-- ❌ Gumroad — takes 10% cut, ugly checkout, no membership
-- ❌ WordPress — too heavy, not the aesthetic
+**Live site:** https://nidhiabroad.vercel.app/
+**GitHub:** https://github.com/Harshjain7237/nidhiabroad
+**Domain (to connect):** nidhiabroad.com (GoDaddy, €0.01 first year)
 
 ---
 
-## 5. Site Architecture (MVP Pages)
+## 7. Site Architecture (MVP)
 
 ```
-/                     → Hero + social proof + product showcase
-/about                → Nidhi's story (the India → Europe journey)
-/guides               → All digital guides listing
-/guides/[slug]        → Individual guide page + buy
-/consult              → 1:1 booking page (Cal.com embed)
-/community            → Membership landing page + join
-/newsletter           → Substack embed / redirect
-/dashboard            → (members only) downloads, resources
-/blog                 → Free content / SEO
+/              → Hero + offerings + social proof + newsletter CTA
+/about         → Nidhi's story + credibility
+/guides        → Non-Technical Tech Jobs series + digital products
+/consult       → 1:1 booking (Cal.com embed — 15min + 30min)
+/community     → Inner Circle newsletter + cohort waitlist
+/dashboard     → Members-only: downloads, resources
 ```
 
 ---
 
-## 6. Database Schema (Supabase)
+## 8. Database Schema (Supabase)
 
 ```sql
--- Core tables
-users           (id, email, name, instagram_handle, created_at)
-products        (id, title, slug, description, price, type[guide|membership], file_url, preview_url)
-purchases       (id, user_id, product_id, lemon_order_id, created_at)
-consultations   (id, user_id, cal_booking_id, status, notes, created_at)
-memberships     (id, user_id, status[active|cancelled], plan, lemon_sub_id, expires_at)
+users           (id, email, name, created_at)
+products        (id, title, slug, description, price, type, gumroad_url, file_url)
+purchases       (id, user_id, product_id, order_ref, created_at)
+consultations   (id, user_id, cal_booking_id, type[15min|30min], status, created_at)
+waitlist        (id, email, source[cohort|product], created_at)
 ```
 
 ---
 
-## 7. Target Audience
+## 9. Copy & Tone
 
-**Primary:** Indians aged 22–32 planning to move or already in Europe for work/study
-**Secondary:** South Asians navigating immigration, job search, cultural adjustment in Europe
-**Pain points they have:**
-- No single trusted source for Europe-specific guidance (most content is US-focused)
-- Don't know where to start (visa → job → housing → taxes)
-- Need someone who looks like them and has done it
+- **Voice:** Honest, warm, direct — a smart friend who figured it out
+- **Not:** Salesy, vague, hype-y
+- **English** primary — occasional Hindi warmth
+- **Specific over generic:** "Land a PM role in 6 months" not "achieve your dreams"
 
 ---
 
-## 8. Tone & Copy Voice
+## 10. Engineering Rules
 
-- Honest and direct (not salesy)
-- Warm but credible (friend who figured it out)
-- Specific over vague ("Get a job in Germany" not "Achieve your dreams abroad")
-- English primary, occasional Hindi/Hinglish for cultural warmth
-
----
-
-## 9. Key Principles
-
-1. **Ship the MVP** — perfect is the enemy of launched
-2. **One source of truth** — this file + Supabase
-3. **GDPR compliant from day 1** — audience is Europe-adjacent
-4. **Mobile first** — 90%+ traffic from Instagram = mobile
-5. **Simple wins** — don't build what a free tool already does well
+1. **Mobile-first always** — test at 375px
+2. **Surgical edits** — fix only what's broken, don't disturb surroundings
+3. **Dark premium aesthetic** — never lighten the background
+4. **Ship MVP** — perfect is the enemy of launched
+5. **Simple wins** — don't build what a free tool does well
 
 ---
 
-## 10. Open Decisions / TODOs
+## 11. Open TODOs
 
-- [x] Confirm domain: nidhiabroad.com — €0.01 first year, 3yr term on GoDaddy ✓
-- [x] Set up GitHub repo — https://github.com/Harshjain7237/nidhiabroad ✓
-- [x] Set up Vercel + Supabase projects (connected via Claude connectors) ✓
-- [x] Next.js scaffold pushed to GitHub ✓
-- [ ] **NEXT: Connect Vercel to GitHub repo → auto-deploys on every push**
-- [ ] **NEXT: Add env vars to Vercel (from .env.local.example)**
-- [ ] **NEXT: Connect nidhiabroad.com domain to Vercel**
-- [ ] Confirm Lemon Squeezy vs Whop for membership
-- [ ] First digital guide to sell — the Technical Recruiter roadmap (already built as HTML, needs PDF packaging)
-- [ ] Nidhi's headshots / brand photos for About page
-- [ ] Cal.com booking link (share the cal.com/nidhi URL once set up)
-- [ ] Substack newsletter URL
-- [ ] Lemon Squeezy account setup (needs Nidhi's banking details for EU payouts)
+- [x] Domain secured: nidhiabroad.com ✓
+- [x] GitHub repo: https://github.com/Harshjain7237/nidhiabroad ✓
+- [x] Vercel deployed: https://nidhiabroad.vercel.app/ ✓
+- [x] Supabase connected ✓
+- [ ] **FIX: Update font from Syne → Playfair Display in codebase**
+- [ ] Connect nidhiabroad.com custom domain to Vercel
+- [ ] Build /consult page with Cal.com embeds (15min + 30min)
+- [ ] Build /community page with Substack embed + cohort waitlist form
+- [ ] Build /guides page with product cards
+- [ ] Wire "The Architect" Gumroad link into /guides
+- [ ] Add Lemon Squeezy when moving beyond Gumroad
 
 ---
 
-## 11. Environment Variables (to populate)
+## 12. Environment Variables
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
-LEMON_SQUEEZY_API_KEY=
-LEMON_SQUEEZY_WEBHOOK_SECRET=
 RESEND_API_KEY=
-NEXT_PUBLIC_CAL_LINK=
+NEXT_PUBLIC_CAL_15MIN=https://cal.com/nidhiabroad/15min
+NEXT_PUBLIC_CAL_30MIN=https://cal.com/nidhiabroad/30min
+NEXT_PUBLIC_SUBSTACK_URL=https://substack.com/@nidhiabroad
+NEXT_PUBLIC_GUMROAD_ARCHITECT_URL=
 ```
 
 ---
