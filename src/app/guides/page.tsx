@@ -2,13 +2,40 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SeriesSection from "./SeriesSection";
 import ToolsSection from "./ToolsSection";
+import { series as staticSeries } from "./data";
+import { fetchEpisodes } from "@/lib/sheets";
+import type { Series } from "./data";
+
+export const revalidate = 300; // fallback: revalidate every 5 min
 
 export const metadata = {
   title: "Guides & Series — nidhiabroad",
   description: "Career series, roadmaps, and tools for building a global career.",
 };
 
-export default function GuidesPage() {
+export default async function GuidesPage() {
+  // Fetch live episodes from Google Sheet (falls back to [] if not configured)
+  const sheetEpisodes = await fetchEpisodes();
+
+  // Merge: if sheet has data for a series, replace its episodes; else keep static
+  const mergedSeries: Series[] = staticSeries.map((s) => {
+    const liveEpisodes = sheetEpisodes.filter((e) => e.series_id === s.id);
+    if (liveEpisodes.length === 0) return s; // no sheet data yet → use static
+
+    return {
+      ...s,
+      episodes: liveEpisodes.map((e) => ({
+        number: e.episode_number,
+        title: e.title,
+        subtitle: e.subtitle,
+        instagramUrl: e.instagram_url,
+        youtubeUrl: e.youtube_url || undefined,
+        roadmapUrl: e.roadmap_url || undefined,
+        tags: e.tags,
+      })),
+    };
+  });
+
   return (
     <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
       <Nav />
@@ -49,7 +76,7 @@ export default function GuidesPage() {
           </p>
         </section>
 
-        <SeriesSection />
+        <SeriesSection series={mergedSeries} />
         <ToolsSection />
 
       </main>

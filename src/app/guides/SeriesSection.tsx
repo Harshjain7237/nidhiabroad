@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { series } from "./data";
+import type { Series } from "./data";
 
 type Platform = "instagram" | "youtube";
 
-export default function SeriesSection() {
+export default function SeriesSection({ series }: { series: Series[] }) {
   const [activeSeries, setActiveSeries] = useState<string | null>(null);
   const [platform, setPlatform] = useState<Platform>("instagram");
 
