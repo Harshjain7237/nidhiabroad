@@ -156,16 +156,19 @@ memberships     (id, user_id, status[active|cancelled], plan, lemon_sub_id, expi
 
 ## 10. Open Decisions / TODOs
 
-- [ ] Confirm domain: nidhiabroad.com (check availability)
+- [x] Confirm domain: nidhiabroad.com — €0.01 first year, 3yr term on GoDaddy ✓
+- [x] Set up GitHub repo — https://github.com/Harshjain7237/nidhiabroad ✓
+- [x] Set up Vercel + Supabase projects (connected via Claude connectors) ✓
+- [x] Next.js scaffold pushed to GitHub ✓
+- [ ] **NEXT: Connect Vercel to GitHub repo → auto-deploys on every push**
+- [ ] **NEXT: Add env vars to Vercel (from .env.local.example)**
+- [ ] **NEXT: Connect nidhiabroad.com domain to Vercel**
 - [ ] Confirm Lemon Squeezy vs Whop for membership
-- [ ] First digital guide to launch with (the technical recruiter one is already built!)
+- [ ] First digital guide to sell — the Technical Recruiter roadmap (already built as HTML, needs PDF packaging)
 - [ ] Nidhi's headshots / brand photos for About page
-- [ ] Cal.com booking link / Calendly if preferred
+- [ ] Cal.com booking link (share the cal.com/nidhi URL once set up)
 - [ ] Substack newsletter URL
-- [ ] Instagram embed API or screenshot approach for social proof
-- [ ] Set up GitHub repo
-- [ ] Set up Vercel + Supabase projects
-- [ ] Set up Lemon Squeezy account (needs to be in Nidhi's name for payouts)
+- [ ] Lemon Squeezy account setup (needs Nidhi's banking details for EU payouts)
 
 ---
 
