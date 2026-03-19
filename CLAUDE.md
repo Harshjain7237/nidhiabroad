@@ -164,7 +164,8 @@ waitlist        (id, email, source[cohort|product], created_at)
 
 ## 10. Engineering Rules
 
-1. **Mobile-first always** — test at 375px
+1. **`"use client"` required for any event handlers** — `onMouseEnter`, `onMouseLeave`, `onClick` etc. in a Server Component cause silent export failures. Either add `"use client"` or use CSS-only hover. Pages with `async` data fetching are Server Components by default.
+2. **Mobile-first always** — test at 375px
 2. **Surgical edits** — fix only what's broken, don't disturb surroundings
 3. **Dark premium aesthetic** — never lighten the background
 4. **Ship MVP** — perfect is the enemy of launched
