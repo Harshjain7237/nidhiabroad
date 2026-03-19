@@ -125,10 +125,7 @@ export default async function GuidesPage() {
                         background: "#fff", border: "1px solid rgba(0,0,0,0.06)",
                         boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
                         textDecoration: "none",
-                        transition: "var(--transition)",
                       }}
-                      onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.borderColor = "rgba(123,104,238,0.3)"}
-                      onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.borderColor = "rgba(0,0,0,0.06)"}
                     >
                       <span style={{ fontFamily: "var(--font-head)", fontWeight: 600, fontSize: 14, color: "var(--white)" }}>
                         {issue.label}
