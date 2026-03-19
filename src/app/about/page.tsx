@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -75,21 +76,13 @@ export default function AboutPage() {
                 background: "var(--bg3)",
                 border: "1px solid rgba(155,109,255,0.2)",
               }}>
-                {/* Swap src to "/nidhi.jpg" once you add the photo to /public */}
-                <div style={{
-                  width: "100%", height: "100%",
-                  display: "flex", flexDirection: "column",
-                  alignItems: "center", justifyContent: "center",
-                  gap: 12,
-                }}>
-                  <span style={{ fontSize: 64 }}>🙋‍♀️</span>
-                  <span style={{
-                    fontFamily: "var(--font-mono)", fontSize: 11,
-                    color: "var(--grey1)", letterSpacing: "0.08em",
-                  }}>
-                    Add photo to /public/nidhi.jpg
-                  </span>
-                </div>
+                <Image
+                  src="/nidhi.jpeg"
+                  alt="Nidhi Duhan — nidhiabroad"
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "top" }}
+                  priority
+                />
               </div>
 
               {/* Floating badge */}
@@ -219,8 +212,8 @@ export default function AboutPage() {
 
         {/* ── TOPICS ── */}
         <section style={{
-          background: "rgba(26,26,36,0.4)",
-          borderTop: "1px solid rgba(255,255,255,0.05)",
+          background: "var(--bg2)",
+          borderTop: "1px solid rgba(0,0,0,0.05)",
           padding: "64px 24px",
         }}>
           <div style={{ maxWidth: 800, margin: "0 auto", textAlign: "center" }}>

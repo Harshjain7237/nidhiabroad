@@ -1,0 +1,38 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
+const FULL_TEXT = "Build a career that belongs anywhere.";
+const SPEED_MS  = 55; // ms per character
+
+export default function TypedHeading() {
+  const [displayed, setDisplayed] = useState("");
+  const [done, setDone]           = useState(false);
+
+  useEffect(() => {
+    if (displayed.length >= FULL_TEXT.length) { setDone(true); return; }
+    const t = setTimeout(
+      () => setDisplayed(FULL_TEXT.slice(0, displayed.length + 1)),
+      SPEED_MS,
+    );
+    return () => clearTimeout(t);
+  }, [displayed]);
+
+  return (
+    <h1 style={{
+      fontFamily: "var(--font-head)",
+      fontWeight: 800,
+      fontSize: "clamp(2.2rem, 6vw, 4.2rem)",
+      lineHeight: 1.12,
+      maxWidth: 760,
+      marginBottom: 24,
+      color: "var(--white)",
+      minHeight: "1.2em", // prevents layout shift before text appears
+    }}>
+      <span className="gradient-brand">{displayed}</span>
+      {!done && (
+        <span className="cursor-blink" style={{ color: "var(--purple)", fontWeight: 300 }}>|</span>
+      )}
+    </h1>
+  );
+}

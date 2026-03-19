@@ -9,26 +9,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#0A0A0F",
-        bg2: "#121218",
-        bg3: "#1A1A24",
-        bg4: "#22222E",
+        bg:    "#FDFCFA",
+        bg2:   "#F8F5F0",
+        bg3:   "#F1EDE6",
+        bg4:   "#E9E3D9",
         purple: {
-          DEFAULT: "#9B6DFF",
-          lo: "#6B3FD4",
-          hi: "#C4A4FF",
+          DEFAULT: "#7B68EE",
+          lo:      "#5A4FCC",
+          hi:      "#A896FF",
         },
         gold: {
-          DEFAULT: "#F5C842",
-          lo: "#B8920A",
+          DEFAULT: "#F0A500",
+          lo:      "#C47A0A",
         },
-        teal: "#4ECDC4",
-        rose: "#FF6B9D",
+        teal:  "#1AB8A8",
+        rose:  "#F06B7A",
         brand: {
-          white: "#F0EFF8",
-          grey1: "#8B8AA0",
-          grey2: "#3A3A4E",
-          grey3: "#2A2A38",
+          text:  "#1A1728",
+          grey1: "#7A7589",
+          grey2: "#C8C4D4",
+          grey3: "#EAE7F0",
         },
       },
       fontFamily: {
@@ -37,13 +37,8 @@ const config: Config = {
         mono: ["var(--font-mono)", "DM Mono", "monospace"],
       },
       borderRadius: {
-        brand: "12px",
+        brand:    "12px",
         "brand-lg": "20px",
-      },
-      backgroundImage: {
-        "gradient-brand": "linear-gradient(135deg, #9B6DFF 0%, #F5C842 100%)",
-        "gradient-purple": "linear-gradient(135deg, #9B6DFF 0%, #6B3FD4 100%)",
-        "gradient-gold": "linear-gradient(135deg, #F5C842 0%, #B8920A 100%)",
       },
     },
   },

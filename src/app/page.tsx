@@ -1,40 +1,37 @@
 import Link from "next/link";
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-
-const stats = [
-  { value: "10K+", label: "Followers in 2 months" },
-  { value: "🇩🇪", label: "HR Tech PM, Germany" },
-  { value: "3", label: "Content series running" },
-];
+import TypedHeading from "@/components/TypedHeading";
 
 const offerings = [
-  {
-    icon: "📖",
-    tag: "Digital Guides",
-    title: "Resources that actually help",
-    desc: "Career frameworks, job search tools, and HR tech breakdowns — built from real experience inside the industry.",
-    href: "/guides",
-    cta: "Browse Guides",
-    accent: "var(--purple)",
-  },
   {
     icon: "🎯",
     tag: "1:1 Coaching",
     title: "Talk to someone already there",
-    desc: "Book a focused session with Nidhi. Career strategy, confidence, HR tech — specific answers for your situation.",
+    desc: "A focused call with Nidhi. Career pivots, corporate confidence, HR tech — specific answers for your exact situation.",
     href: "/consult",
-    cta: "Book a Session",
+    cta: "Book a session",
+    accent: "var(--purple)",
+  },
+  {
+    icon: "📖",
+    tag: "Guides & Series",
+    title: "Resources that move you forward",
+    desc: "Career series, roadmaps, and tools. Built from real experience inside corporate and HR tech.",
+    href: "/guides",
+    cta: "Browse guides",
     accent: "var(--gold)",
   },
   {
     icon: "📬",
     tag: "Inner Circle",
     title: "The newsletter worth reading",
-    desc: "Corporate confidence, HR tech, AI trends, and what it really takes to build a global career. Bi-weekly, no fluff.",
-    href: "/community",
-    cta: "Subscribe Free",
+    desc: "Corporate confidence, HR tech, AI trends, bi-weekly. The stuff that doesn't make it to Instagram.",
+    href: "https://substack.com/@nidhiabroad",
+    cta: "Subscribe free",
     accent: "var(--teal)",
+    external: true,
   },
 ];
 
@@ -42,103 +39,62 @@ export default function Home() {
   return (
     <>
       <Nav />
-
       <main style={{ position: "relative", zIndex: 1 }}>
 
         {/* ── HERO ── */}
-        <section
-          style={{
-            minHeight: "100vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            padding: "120px 24px 80px",
-          }}
-        >
-          <span
-            style={{
-              display: "inline-block",
-              background: "rgba(155, 109, 255, 0.12)",
-              border: "1px solid rgba(155, 109, 255, 0.3)",
-              borderRadius: 100,
-              padding: "6px 18px",
-              fontSize: 12,
-              color: "var(--purple-hi)",
-              letterSpacing: "0.08em",
-              marginBottom: 28,
-              fontFamily: "var(--font-mono)",
-            }}
-          >
+        <section style={{
+          minHeight: "100vh",
+          display: "flex", flexDirection: "column",
+          alignItems: "center", justifyContent: "center",
+          textAlign: "center", padding: "120px 24px 80px",
+        }}>
+          <span className="pill" style={{ marginBottom: 32 }}>
             ✦ HR Tech · Corporate Confidence · Global Careers
           </span>
 
-          <h1
-            style={{
-              fontFamily: "var(--font-head)",
-              fontWeight: 800,
-              fontSize: "clamp(2.4rem, 7vw, 5rem)",
-              lineHeight: 1.1,
-              maxWidth: 800,
-              marginBottom: 24,
-            }}
-          >
-            <span className="gradient-brand">Build a career</span>
-            <br />
-            that belongs
-            <br />
-            anywhere.
-          </h1>
+          <TypedHeading />
 
-          <p
-            style={{
-              color: "var(--grey1)",
-              fontSize: "clamp(15px, 2vw, 18px)",
-              maxWidth: 540,
-              marginBottom: 40,
-              lineHeight: 1.7,
-            }}
-          >
-            Nidhi Duhan is an HR Tech PM in Germany writing about corporate confidence, HR tech, AI trends, and what it really takes to build a career without borders.
+          <p style={{
+            color: "var(--grey1)",
+            fontSize: "clamp(15px, 2vw, 18px)",
+            maxWidth: 540, marginBottom: 16, lineHeight: 1.75,
+            fontStyle: "italic",
+          }}>
+            Not a recruiter. Not a visa guide. Just clarity.
+          </p>
+          <p style={{
+            color: "var(--grey1)",
+            fontSize: "clamp(14px, 1.8vw, 16px)",
+            maxWidth: 520, marginBottom: 44, lineHeight: 1.75,
+          }}>
+            I&apos;m a sounding board for ambitious professionals figuring out their next move — in tech, in corporate, and in their own heads.
           </p>
 
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
-            <Link href="/guides" className="btn-primary px-8 py-3 text-sm no-underline">
-              Explore Guides →
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
+            <Link href="/consult" className="btn-primary px-8 py-3 text-sm no-underline">
+              Book a call →
             </Link>
-            <Link
-              href="/consult"
-              style={{
-                padding: "12px 32px",
-                borderRadius: "var(--radius)",
-                border: "1px solid rgba(155, 109, 255, 0.3)",
-                color: "var(--white)",
-                fontSize: 14,
-                transition: "var(--transition)",
-              }}
-              className="hover:border-[#9B6DFF] hover:bg-[#1A1A24] no-underline"
+            <Link href="/guides" style={{
+              padding: "12px 32px", borderRadius: "var(--radius)",
+              border: "1px solid rgba(123,104,238,0.3)",
+              color: "var(--white)", fontSize: 14, textDecoration: "none",
+              transition: "var(--transition)", background: "transparent",
+            }}
+            className="hover:bg-[#F1EDE6]"
             >
-              Book a Consult
+              Browse guides
             </Link>
           </div>
 
           {/* Stats */}
-          <div
-            style={{
-              display: "flex",
-              gap: 48,
-              marginTop: 72,
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            {stats.map((s) => (
+          <div style={{ display: "flex", gap: 48, marginTop: 72, flexWrap: "wrap", justifyContent: "center" }}>
+            {[
+              { value: "10K+", label: "Followers in 2 months" },
+              { value: "🇩🇪", label: "HR Tech PM, Germany" },
+              { value: "3", label: "Content series running" },
+            ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div
-                  className="gradient-brand"
-                  style={{ fontFamily: "var(--font-head)", fontWeight: 800, fontSize: 32 }}
-                >
+                <div className="gradient-brand" style={{ fontFamily: "var(--font-head)", fontWeight: 800, fontSize: 30 }}>
                   {s.value}
                 </div>
                 <div style={{ color: "var(--grey1)", fontSize: 13, marginTop: 4 }}>{s.label}</div>
@@ -147,117 +103,164 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── OFFERINGS ── */}
-        <section style={{ padding: "80px 24px", maxWidth: 1100, margin: "0 auto" }}>
-          <h2
-            style={{
-              fontFamily: "var(--font-head)",
-              fontWeight: 800,
-              fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
-              textAlign: "center",
-              marginBottom: 16,
-            }}
+        {/* ── ABOUT NIDHI (first, before offerings) ── */}
+        <section style={{
+          background: "var(--bg2)",
+          borderTop: "1px solid rgba(0,0,0,0.05)",
+          borderBottom: "1px solid rgba(0,0,0,0.05)",
+          padding: "80px 24px",
+        }}>
+          <div style={{
+            maxWidth: 960, margin: "0 auto",
+            display: "grid", gridTemplateColumns: "280px 1fr",
+            gap: 56, alignItems: "center",
+          }}
+          className="home-about-grid"
           >
-            How I can help you
-          </h2>
-          <p style={{ color: "var(--grey1)", textAlign: "center", marginBottom: 56, fontSize: 15 }}>
-            Pick what matches where you are in your journey right now.
-          </p>
+            {/* Photo */}
+            <div style={{ position: "relative" }}>
+              <div style={{
+                position: "absolute", inset: -3,
+                background: "linear-gradient(135deg, #7B68EE30, #F0A50020)",
+                borderRadius: 22, filter: "blur(16px)",
+              }} />
+              <div style={{
+                position: "relative",
+                width: "100%", aspectRatio: "4/5",
+                borderRadius: 20, overflow: "hidden",
+                border: "1px solid rgba(123,104,238,0.15)",
+                boxShadow: "0 4px 32px rgba(0,0,0,0.08)",
+              }}>
+                <Image
+                  src="/nidhi.jpeg"
+                  alt="Nidhi Duhan — nidhiabroad"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  priority
+                />
+              </div>
+            </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-              gap: 24,
-            }}
-          >
-            {offerings.map((o) => (
-              <div
-                key={o.tag}
-                className="glass-card"
-                style={{ padding: "36px 32px", transition: "var(--transition)" }}
+            {/* Text */}
+            <div>
+              <span className="pill" style={{ marginBottom: 20 }}>✦ About Nidhi</span>
+              <h2 style={{
+                fontFamily: "var(--font-head)", fontWeight: 800,
+                fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+                lineHeight: 1.2, marginBottom: 16, color: "var(--white)",
+              }}>
+                HR Tech PM in Germany.{" "}
+                <span className="gradient-brand">Writing about what actually matters.</span>
+              </h2>
+              <p style={{ color: "var(--grey1)", fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>
+                I work in HR Tech at Mobile.de in Germany. Before that — CEO office, corporate strategy, and a lot of figuring things out the hard way.
+              </p>
+              <p style={{ color: "var(--grey1)", fontSize: 15, lineHeight: 1.8, marginBottom: 28 }}>
+                I write about corporate confidence, HR tech, AI trends, and building a career that doesn&apos;t depend on staying in one place.
+              </p>
+              <Link href="/about" style={{
+                color: "var(--purple)", fontSize: 14,
+                fontFamily: "var(--font-head)", fontWeight: 600,
+                textDecoration: "none",
+              }}
+              className="hover:underline"
               >
-                <div style={{ fontSize: 36, marginBottom: 16 }}>{o.icon}</div>
-                <span
-                  style={{
-                    fontSize: 11,
-                    fontFamily: "var(--font-mono)",
-                    color: o.accent,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                  }}
-                >
+                Read the full story →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── OFFERINGS ── */}
+        <section style={{ padding: "80px 24px", maxWidth: 1060, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <h2 style={{
+              fontFamily: "var(--font-head)", fontWeight: 800,
+              fontSize: "clamp(1.5rem, 3.5vw, 2.2rem)", marginBottom: 12,
+              color: "var(--white)",
+            }}>
+              How I can help
+            </h2>
+            <p style={{ color: "var(--grey1)", fontSize: 15 }}>
+              Pick what matches where you are right now.
+            </p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+            {offerings.map((o) => (
+              <div key={o.tag} className="glass-card" style={{ padding: "32px 28px" }}>
+                <div style={{ fontSize: 32, marginBottom: 14 }}>{o.icon}</div>
+                <span style={{
+                  fontSize: 11, fontFamily: "var(--font-mono)",
+                  color: o.accent, letterSpacing: "0.1em", textTransform: "uppercase",
+                }}>
                   {o.tag}
                 </span>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-head)",
-                    fontWeight: 700,
-                    fontSize: 20,
-                    margin: "12px 0 10px",
-                    color: "var(--white)",
-                  }}
-                >
+                <h3 style={{
+                  fontFamily: "var(--font-head)", fontWeight: 700, fontSize: 19,
+                  margin: "10px 0 8px", color: "var(--white)",
+                }}>
                   {o.title}
                 </h3>
-                <p style={{ color: "var(--grey1)", fontSize: 14, lineHeight: 1.7, marginBottom: 28 }}>
+                <p style={{ color: "var(--grey1)", fontSize: 14, lineHeight: 1.7, marginBottom: 24 }}>
                   {o.desc}
                 </p>
-                <Link
-                  href={o.href}
-                  style={{
-                    display: "inline-block",
-                    padding: "10px 24px",
-                    borderRadius: "var(--radius)",
-                    border: `1px solid ${o.accent}40`,
-                    color: o.accent,
-                    fontSize: 13,
-                    fontFamily: "var(--font-head)",
-                    fontWeight: 600,
-                    transition: "var(--transition)",
-                  }}
-                  className="no-underline hover:bg-[#1A1A24]"
-                >
-                  {o.cta} →
-                </Link>
+                {o.external ? (
+                  <a href={o.href} target="_blank" rel="noopener noreferrer" style={{
+                    display: "inline-block", padding: "9px 22px", borderRadius: "var(--radius)",
+                    border: `1px solid ${o.accent}50`, color: o.accent, fontSize: 13,
+                    fontFamily: "var(--font-head)", fontWeight: 600, textDecoration: "none",
+                  }}>
+                    {o.cta} →
+                  </a>
+                ) : (
+                  <Link href={o.href} style={{
+                    display: "inline-block", padding: "9px 22px", borderRadius: "var(--radius)",
+                    border: `1px solid ${o.accent}50`, color: o.accent, fontSize: 13,
+                    fontFamily: "var(--font-head)", fontWeight: 600, textDecoration: "none",
+                  }}>
+                    {o.cta} →
+                  </Link>
+                )}
               </div>
             ))}
           </div>
         </section>
 
         {/* ── NEWSLETTER CTA ── */}
-        <section style={{ padding: "80px 24px" }}>
-          <div
-            className="glass-card"
-            style={{
-              maxWidth: 680,
-              margin: "0 auto",
-              padding: "56px 40px",
-              textAlign: "center",
-              background: "linear-gradient(135deg, rgba(155,109,255,0.08) 0%, rgba(245,200,66,0.06) 100%)",
-            }}
-          >
-            <span style={{ fontSize: 40 }}>✉️</span>
-            <h2
-              style={{
-                fontFamily: "var(--font-head)",
-                fontWeight: 800,
-                fontSize: "clamp(1.4rem, 3vw, 2rem)",
-                margin: "16px 0 12px",
-              }}
-            >
+        <section style={{ padding: "40px 24px 100px" }}>
+          <div style={{
+            maxWidth: 640, margin: "0 auto", padding: "52px 40px",
+            textAlign: "center",
+            background: "linear-gradient(135deg, rgba(123,104,238,0.07) 0%, rgba(240,165,0,0.05) 100%)",
+            borderRadius: 24, border: "1px solid rgba(123,104,238,0.12)",
+            boxShadow: "0 4px 32px rgba(0,0,0,0.04)",
+          }}>
+            <span style={{ fontSize: 36 }}>📬</span>
+            <h2 style={{
+              fontFamily: "var(--font-head)", fontWeight: 800,
+              fontSize: "clamp(1.3rem, 3vw, 1.8rem)", margin: "14px 0 10px",
+              color: "var(--white)",
+            }}>
               Inner Circle — bi-weekly
             </h2>
-            <p style={{ color: "var(--grey1)", fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-              Deeper career insights, behind-the-scenes, and resources not shared publicly on social. No fluff, ever.
+            <p style={{ color: "var(--grey1)", fontSize: 15, marginBottom: 28, lineHeight: 1.7 }}>
+              The stuff that doesn&apos;t make it to Instagram. Career insights, HR tech, AI trends — no fluff, ever.
             </p>
-            <Link href="/newsletter" className="btn-gold px-8 py-3 text-sm no-underline">
-              Subscribe Free →
-            </Link>
+            <a href="https://substack.com/@nidhiabroad" target="_blank" rel="noopener noreferrer"
+              className="btn-gold no-underline" style={{ padding: "12px 32px", fontSize: 14 }}>
+              Join the Inner Circle →
+            </a>
           </div>
         </section>
 
       </main>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .home-about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+        }
+      `}</style>
 
       <Footer />
     </>
