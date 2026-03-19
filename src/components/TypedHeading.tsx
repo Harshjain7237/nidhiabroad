@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const FULL_TEXT = "Build a career that belongs anywhere.";
+const FULL_TEXT = "Building careers that belong anywhere.";
 const SPEED_MS  = 55; // ms per character
 
 export default function TypedHeading() {

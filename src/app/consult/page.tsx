@@ -7,14 +7,15 @@ import CalEmbed from "@/components/CalEmbed";
 
 const sessions = [
   {
-    id: "dm",
+    id: "email",
     icon: "✉️",
-    label: "Priority DM / Email",
+    label: "Priority Email",
     duration: "Async",
     price: "€5",
     accent: "var(--teal)",
-    description: "Send your question, get a focused written response. Ideal for quick decisions or a gut-check when you don't have time for a call.",
+    description: "Send your question to nxhub.ai@gmail.com, get a focused written response within 48h. Ideal for quick decisions or a gut-check.",
     features: ["Written response within 48h", "One focused question", "Links or resources if relevant"],
+    email: "nxhub.ai@gmail.com",
     calLink: null,
   },
   {
@@ -34,7 +35,7 @@ const sessions = [
     icon: "🧭",
     label: "Deep Dive",
     duration: "45 min",
-    price: "€35",
+    price: "€30",
     accent: "var(--purple)",
     description: "Career crossroads, research together, tool options, thinking out loud. For when you need more than a quick answer.",
     features: ["Career crossroads exploration", "Research together", "Tool & option mapping", "Clear direction to leave with"],
@@ -46,21 +47,22 @@ const sessions = [
     icon: "📄",
     label: "CV / LinkedIn Audit",
     duration: "Async",
-    price: "€20",
+    price: "€10",
     accent: "var(--gold)",
     description: "You submit your CV and/or LinkedIn. I review it and record a Loom video walking through my feedback.",
     features: ["Full CV review", "LinkedIn profile audit", "Loom video feedback", "Delivered within 72h"],
+    email: "nxhub.ai@gmail.com",
     calLink: null,
   },
   {
     id: "sprint",
     icon: "🔭",
-    label: "Research Sprint",
+    label: "Research Sprint + Follow-up",
     duration: "60 min",
     price: "€50",
     accent: "var(--rose)",
-    description: "You're exploring a pivot, a tool, a market — we go deep together. The most thorough session.",
-    features: ["Market or role deep-dive", "Tool & resource mapping", "Pivot planning", "Written summary after"],
+    description: "You're exploring a pivot, a tool, a market — we go deep together. The most thorough session, plus a free follow-up.",
+    features: ["Market or role deep-dive", "Tool & resource mapping", "Pivot planning", "Written summary after", "Free follow-up included"],
     calLink: "nidhiabroad/30min",
     elementId: "cal-sprint",
   },
@@ -87,7 +89,7 @@ export default function ConsultPage() {
             <span className="gradient-brand">Real talk.</span> Actual direction.
           </h1>
           <p style={{ color: "var(--grey1)", fontSize: 17, maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>
-            Not a coaching programme. Not a course. A focused conversation with someone who works in HR tech in Europe and thinks about this stuff every day.
+            Not a coaching programme. Not a course. A focused conversation with someone who has worked with professionals across India, Europe and the US and thinks about corporate confidence every day.
           </p>
         </section>
 
@@ -116,6 +118,7 @@ export default function ConsultPage() {
               </h3>
               {[
                 "Ambitious professionals mid-pivot",
+                "Curious students exploring the next phase in life",
                 "People who need a thinking partner, not a coach",
                 "Anyone stuck between options and needing honest input",
                 "People exploring HR tech, corporate careers, or moving abroad",
@@ -136,6 +139,7 @@ export default function ConsultPage() {
                 "A short, actionable plan",
                 "A list of tools and resources to explore",
                 "Honest, unfiltered feedback",
+                "A sounding board",
               ].map((item) => (
                 <div key={item} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
                   <span style={{ color: "var(--gold)", fontSize: 14, flexShrink: 0, marginTop: 1 }}>✓</span>
@@ -245,11 +249,17 @@ export default function ConsultPage() {
                     background: "var(--bg2)", borderRadius: 14,
                     border: "1px dashed var(--grey2)",
                   }}>
-                    <p style={{ color: "var(--grey1)", fontSize: 15, marginBottom: 20 }}>
-                      This session is booked by email. Send a message to get started.
+                    <p style={{ color: "var(--grey1)", fontSize: 15, marginBottom: 8 }}>
+                      This session runs over email. Send your request to:
                     </p>
-                    <a href="mailto:nidhi@nidhiabroad.com" className="btn-primary no-underline" style={{ padding: "12px 28px", fontSize: 14 }}>
-                      Get in touch →
+                    <p style={{
+                      fontFamily: "var(--font-mono)", fontSize: 15,
+                      color: "var(--purple)", fontWeight: 600, marginBottom: 24,
+                    }}>
+                      nxhub.ai@gmail.com
+                    </p>
+                    <a href="mailto:nxhub.ai@gmail.com" className="btn-primary no-underline" style={{ padding: "12px 28px", fontSize: 14 }}>
+                      Email Nidhi →
                     </a>
                   </div>
                 )}

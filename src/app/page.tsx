@@ -67,7 +67,7 @@ export default function Home() {
             fontSize: "clamp(14px, 1.8vw, 16px)",
             maxWidth: 520, marginBottom: 44, lineHeight: 1.75,
           }}>
-            I&apos;m a sounding board for ambitious professionals figuring out their next move — in tech, in corporate, and in their own heads.
+            I&apos;m a sounding board for ambitious professionals and students figuring out their next move — in tech, in corporate, and in their own heads or businesses.
           </p>
 
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center" }}>
@@ -87,17 +87,18 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div style={{ display: "flex", gap: 48, marginTop: 72, flexWrap: "wrap", justifyContent: "center" }}>
+          <div style={{ display: "flex", gap: 40, marginTop: 72, flexWrap: "wrap", justifyContent: "center" }}>
             {[
-              { value: "10K+", label: "Followers in 2 months" },
-              { value: "🇩🇪", label: "HR Tech PM, Germany" },
-              { value: "3", label: "Content series running" },
+              { value: "1.5Mn+", label: "Profile views" },
+              { value: "10.6K+", label: "Followers" },
+              { value: "150+", label: "Substack subscribers" },
+              { value: "20+", label: "People helped & guided" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div className="gradient-brand" style={{ fontFamily: "var(--font-head)", fontWeight: 800, fontSize: 30 }}>
+                <div className="gradient-brand" style={{ fontFamily: "var(--font-head)", fontWeight: 800, fontSize: 28 }}>
                   {s.value}
                 </div>
-                <div style={{ color: "var(--grey1)", fontSize: 13, marginTop: 4 }}>{s.label}</div>
+                <div style={{ color: "var(--grey1)", fontSize: 12, marginTop: 4 }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -149,9 +150,17 @@ export default function Home() {
                 fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
                 lineHeight: 1.2, marginBottom: 16, color: "var(--white)",
               }}>
-                HR Tech PM in Germany.{" "}
+                HR Tech PM.{" "}
                 <span className="gradient-brand">Writing about what actually matters.</span>
               </h2>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+                <span style={{ fontSize: 20 }}>🇮🇳</span>
+                <span style={{ color: "var(--grey2)", fontSize: 13 }}>→</span>
+                <span style={{ fontSize: 20 }}>🇩🇪</span>
+                <span style={{ color: "var(--grey2)", fontSize: 13 }}>→</span>
+                <span style={{ fontSize: 20 }}>🇨🇭</span>
+                <span style={{ color: "var(--grey1)", fontSize: 13, marginLeft: 4 }}>India · Germany · Switzerland</span>
+              </div>
               <p style={{ color: "var(--grey1)", fontSize: 15, lineHeight: 1.8, marginBottom: 12 }}>
                 I work in HR Tech at Mobile.de in Germany. Before that — CEO office, corporate strategy, and a lot of figuring things out the hard way.
               </p>
