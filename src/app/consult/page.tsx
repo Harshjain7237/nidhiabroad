@@ -4,6 +4,7 @@ import { useState } from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CalEmbed from "@/components/CalEmbed";
+import TypedHeading from "@/components/TypedHeading";
 
 const sessions = [
   {
@@ -81,13 +82,7 @@ export default function ConsultPage() {
         {/* ── HEADER ── */}
         <section style={{ textAlign: "center", padding: "60px 24px 20px" }}>
           <span className="pill" style={{ marginBottom: 24 }}>✦ 1:1 Sessions with Nidhi</span>
-          <h1 style={{
-            fontFamily: "var(--font-head)", fontWeight: 800,
-            fontSize: "clamp(2rem, 5vw, 3.2rem)", lineHeight: 1.15,
-            marginBottom: 16, color: "var(--white)",
-          }}>
-            <span className="gradient-brand">Real talk.</span> Actual direction.
-          </h1>
+          <TypedHeading text="Real talk. Actual direction." fontSize="clamp(2rem, 5vw, 3.2rem)" />
           <p style={{ color: "var(--grey1)", fontSize: 17, maxWidth: 520, margin: "0 auto", lineHeight: 1.75 }}>
             Not a coaching programme. Not a course. A focused conversation with someone who has worked with professionals across India, Europe and the US and thinks about corporate confidence every day.
           </p>

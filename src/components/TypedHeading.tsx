@@ -2,12 +2,18 @@
 
 import { useState, useEffect } from "react";
 
-const FULL_TEXT = "Building careers that belong anywhere.";
-const SPEED_MS  = 55; // ms per character
+const DEFAULT_TEXT = "Building careers that belong anywhere.";
+const SPEED_MS     = 55; // ms per character
 
-export default function TypedHeading() {
+export default function TypedHeading({ text, fontSize }: { text?: string; fontSize?: string }) {
+  const FULL_TEXT = text ?? DEFAULT_TEXT;
   const [displayed, setDisplayed] = useState("");
   const [done, setDone]           = useState(false);
+
+  useEffect(() => {
+    setDisplayed("");
+    setDone(false);
+  }, [FULL_TEXT]);
 
   useEffect(() => {
     if (displayed.length >= FULL_TEXT.length) { setDone(true); return; }
@@ -16,13 +22,13 @@ export default function TypedHeading() {
       SPEED_MS,
     );
     return () => clearTimeout(t);
-  }, [displayed]);
+  }, [displayed, FULL_TEXT]);
 
   return (
     <h1 style={{
       fontFamily: "var(--font-head)",
       fontWeight: 800,
-      fontSize: "clamp(2.2rem, 6vw, 4.2rem)",
+      fontSize: fontSize ?? "clamp(2.2rem, 6vw, 4.2rem)",
       lineHeight: 1.12,
       maxWidth: 760,
       marginBottom: 24,
