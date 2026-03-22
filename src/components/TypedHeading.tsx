@@ -31,7 +31,8 @@ export default function TypedHeading({ text, fontSize }: { text?: string; fontSi
       fontSize: fontSize ?? "clamp(2.2rem, 6vw, 4.2rem)",
       lineHeight: 1.12,
       maxWidth: 760,
-      marginBottom: 24,
+      margin: "0 auto 24px",
+      textAlign: "center",
       color: "var(--white)",
       minHeight: "1.2em", // prevents layout shift before text appears
     }}>

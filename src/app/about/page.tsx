@@ -8,13 +8,15 @@ import Footer from "@/components/Footer";
 // Each paragraph renders as its own block on the page.
 
 const storyParagraphs = [
-  `I grew up in India knowing I wanted more than what was in front of me — not in a restless way, but in a "there's a bigger world out there and I want to actually live in it" kind of way. I just didn't know how to get there, or what it would take.`,
+  `I grew up in India knowing I wanted more — not in a vague, restless way, but in a very specific "there is a bigger world and I will find my way into it" kind of way. So when I moved to Germany, things got interesting.`,
 
-  `After years of working in the corporate world — including stints close to the CEO office where I saw how decisions really get made — I made the leap. I moved to Germany and landed a role in HR Tech at Mobile.de. And that's when everything clicked: the career skills I'd built were portable. Geography was never the constraint I thought it was.`,
+  `I found myself in rooms I hadn't expected to be in — M&A conversations, strategy calls with founders worth hundreds of millions, hiring decisions, international travel, and a front-row seat to how people at the top actually think. Not how they present on LinkedIn. How they actually think. That experience changed something in me. Not because it was glamorous — it often wasn't — but because I started to see the gap between people who move with clarity and people who don't. And it rarely had to do with talent.`,
 
-  `But getting here wasn't a straight line. There were visa rejections, bad advice, endless Google rabbit holes that led nowhere, and a lot of "figure it out yourself" moments that nobody prepares you for. I started @nidhiabroad because I didn't want anyone else to go through that alone.`,
+  `Somewhere along the way, I started @nidhiabroad — a space to share the stuff nobody tells you about building a career abroad. It grew faster than I expected, because turns out, a lot of people were waiting for that conversation.`,
 
-  `Today I write about corporate confidence, HR tech, AI trends, and what it actually takes to build a career that belongs anywhere. Not the glossy version. The real one — with the wrong turns included.`,
+  `Today I'm not a career coach. I don't help with job applications or visa paperwork. What I do is help you think — clearly, honestly, without the noise. Build a roadmap that actually fits your life. Ask the questions you haven't asked yourself yet. And give you a perspective shaped by years of watching how the best decision-makers operate up close.`,
+
+  `If you're ambitious, a little unconventional, and tired of generic advice — you're in the right place.`,
 ];
 
 // ─── CREDIBILITY MARKERS ─────────────────────────────────────────────────────
@@ -124,8 +126,8 @@ export default function AboutPage() {
                 lineHeight: 1.15, marginBottom: 20,
               }}>
                 Hi, I&apos;m Nidhi.{" "}
-                <span className="gradient-brand">I figured it out</span>
-                {" "}so you don&apos;t have to start from zero.
+                <span className="gradient-brand">I&apos;ve been in the room.</span>
+                {" "}Now I help you figure out how to get there.
               </h1>
 
               <p style={{ color: "var(--grey1)", fontSize: 16, lineHeight: 1.8, marginBottom: 32 }}>
