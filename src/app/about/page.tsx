@@ -126,8 +126,8 @@ export default function AboutPage() {
                 lineHeight: 1.15, marginBottom: 20,
               }}>
                 Hi, I&apos;m Nidhi.{" "}
-                <span className="gradient-brand">I&apos;ve been in the room.</span>
-                {" "}Now I help you figure out how to get there.
+                <span className="gradient-brand">I figured it out</span>
+                {" "}— so you don&apos;t have to start from zero.
               </h1>
 
               <p style={{ color: "var(--grey1)", fontSize: 16, lineHeight: 1.8, marginBottom: 32 }}>

@@ -150,8 +150,8 @@ export default function Home() {
                 fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
                 lineHeight: 1.2, marginBottom: 16, color: "var(--white)",
               }}>
-                I&apos;ve been in the room.{" "}
-                <span className="gradient-brand">Now I help you get there.</span>
+                HR Tech PM.{" "}
+                <span className="gradient-brand">Figuring it out so you don&apos;t have to.</span>
               </h2>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
                 <span style={{ fontSize: 20 }}>🇮🇳</span>
